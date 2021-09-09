@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.navmenu {
+	background: linear-gradient(45deg, #2C3E50, #0e0d0d);
+	overflow: hidden;
+	border-bottom: 0.15em solid black;
+}
+.navmenu a {
+	float: left;
+	display: block;
+	color: white;
+	text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px #000; 
+	padding: 1.25em;
+	text-decoration: none;
+	font-size: 1.063em;
+}
+.navmenu a:hover, .navmenu a.active {
+	background-color: rgb(27, 104, 105);
+}
+.navmenu .icon {
+	display: none;
+	padding: 1.3em;
+}
+.nav_header::after {
+	clear: both;
+}
+.searchbar {
+	float: right;
+	padding-top: 0.8em;
+	margin-right: 1em;
+}
+#search_box {
+	width: 20em;
+	height: 2em;
+	color: white;
+	text-shadow: 1px 1px 1px #000, 
+        3px 3px 5px #000; 
+	background: white;
+	border: none;
+	border: none;
+    border-bottom: 0.0625em solid rgb(255, 255, 255);
+    outline: none;
+    background: transparent;
+}
+#search_submit {
+    background: transparent;
+    border: none;
+    outline: none;
+	color: rgb(255, 255, 255);
+	text-shadow: 1px 1px 1px #000, 
+        3px 3px 5px #000;
+    background: #03a9f4;
+    padding: 0.625em 1.25em;
+    cursor: pointer;
+    border-radius: 0.3125em;
+}
+#search_submit:hover {
+	color: black;
+}
+@media screen and (max-width: 850px) {
+	/* Nav Styles */
+	.navmenu a:not(:first-child), .searchbar {
+		display: none;
+    }
+	.navmenu a.icon {
+    	float: right;
+    	display: block;
+    }
+  	.navmenu.responsive {
+  		position: relative;
+    }
+  	.navmenu.responsive .icon {
+    	position: absolute;
+    	right: 0;
+    	top: 0;
+    }
+  	.navmenu.responsive a {
+    	float: none;
+    	display: block;
+    	text-align: left;
+	}
+ 	.responsive_searchbar {
+		display: block;
+		float: right;
+	}
+}
+@media screen and (max-width: 650px) {
+	#search_box {
+		width: 13em;
+	}
+	.responsive_searchbar {
+		padding-bottom: 1em;
+	}
+}

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+}
+section {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #fff, #c0d9e2, #c3e0da);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+}
+.login_div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25em;
+    padding: 2.5em;
+    background: rgba(0, 0, 0, .8);
+    box-sizing: border-box;
+    box-shadow: 0 0.9375em 1.5625em rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+.login_div h2 {
+    margin: 0 0 1.875em;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.login_div .login_form {
+    position: relative;
+}
+.login_div .login_form input {
+    width: 100%;
+    padding: 0.375em 0;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    letter-spacing: 0.125em;
+    margin-bottom: 1.875em;
+    border: none;
+    border-bottom: 0.0625em solid rgb(255, 255, 255);
+    outline: none;
+    background: transparent;
+}
+.login_div .login_form label {
+    letter-spacing: 0.125em;
+    padding: 0.625em 0;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+}
+.login_div button[type="submit"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #03a9f4;
+    padding: 0.625em 1.25em;
+    cursor: pointer;
+    border-radius: 0.3125em;
+}
+#signup_a, #cancel_signup {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    padding: 0.625em 1.25em;
+    cursor: pointer;
+    border-radius: 0.3125em;
+    font-size: 0.8125em;
+    text-decoration: none;
+}
+.nonfield {
+    display:none;
+}
+.error, .errorlist {
+    list-style-type: none;
+    padding: 1em 0em 1em 0.3em;
+    margin: 0.1em 0em 0.1em 0em;
+    color: lightcoral;
+    border-radius: 5px;
+}
+.helptext {
+    display: none;
+}
+.login_form>li {
+    list-style: none;
+}
+@keyframes change {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .login_div {
+        width: 20em;
+    }
+}
+@media only screen and (max-width: 330px) {
+    .login_div {
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 300px) {
+    section, .login_div {
+        overflow: auto;
+    }
+}

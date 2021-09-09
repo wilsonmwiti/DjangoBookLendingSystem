@@ -1,1 +1,1 @@
-# DjangoBookLendingSystem
+Lainausjärjestelmä -projekti

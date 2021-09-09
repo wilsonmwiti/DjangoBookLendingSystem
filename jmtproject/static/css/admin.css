@@ -1,0 +1,20 @@
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: white;
+}
+
+#header {
+    background: linear-gradient(45deg, #2C3E50, #0e0d0d);
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: #4d7081;
+}
+
+div.breadcrumbs {
+    background: linear-gradient(45deg, #2C3E50, #0e0d0d);
+    border-top: 1px solid white;
+}
+
+#nav-sidebar {
+    padding-top: 1.4em;
+}

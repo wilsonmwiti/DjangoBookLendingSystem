@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block style %}{% static 'css/main.css' %}{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+{% endblock %}
+  
+{% block header %}{% include "navbar.html" %}{% endblock %}
+
+{% block content %} 
+  <div class="singlebook_body">
+    <div class="page-container">
+      <div class="grid_items container-extra-space">
+        <div class="single_grid_item">
+          <img src="{{ book.cover.url }}" />
+            <ul>
+              <li><h3>{{ book.title }}</h3></li>
+              <br>
+              <li>
+                <span class="text_title">Authors: </span><br />{% for author in book.authors.all %} - {{ author }}<br />
+                {% endfor %}
+              </li>
+              <li><span class="text_title">Language: </span>{{ book.language }}</li>
+              <li><span class="text_title">Publisher: </span>{{ book.publisher }}</li>
+              <li><span class="text_title">Publication date: </span>{{ book.publication_date }}</li>
+              <li><span class="text_title">Description: </span>{{ book.description|wordwrap:45|linebreaks }}</li>
+            </ul>
+            <br /><br />
+            {% if loan_info.available %}
+            <form id="singlebook_form" action="" method="POST">
+              {% csrf_token %}
+              <table>
+                {{ loan_form }}
+              </table>
+              <input class="loan_btn" type="submit" value="Borrow this book" />
+            </form>
+            {% else %}
+            <p id="on_loan_text">
+              This book is currently on loan and will be<br>
+              returned on 
+              {{ loan_info.return_date }}
+            </p>
+            {% endif %}
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}{% include "footer.html" %}{% endblock %}
+
+{% block afterbody %}
+    <script src="" async defer></script>
+{% endblock %}

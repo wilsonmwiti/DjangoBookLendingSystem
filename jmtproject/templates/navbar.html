@@ -1,0 +1,15 @@
+<div class="nav_header">
+<nav class="navmenu" id="myNav">
+    <a href="/library/">Home</a>
+    <a href="{% url 'profile' user.pk%}">Profile</a>
+    {% if user.is_staff %}
+    <a href="/admin/">Admin</a>
+    {% endif %}
+    <a href="{% url 'logout' %}">Log out</a>
+    <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+        <i class="fa fa-bars"></i></a>
+    <div class="searchbar responsive_searchbar">{% include "searchbar.html" %}</div>
+</nav>
+</div>
+{% load static %}
+<script src="{% static 'js/navbar.js' %}"></script>

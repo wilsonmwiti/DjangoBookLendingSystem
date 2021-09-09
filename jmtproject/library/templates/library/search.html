@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Search results{% endblock %}
+
+{% load static %}
+{% block style %}{% static 'css/main.css' %}{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+{% endblock %}
+
+{% block header %}{% include "navbar.html" %}{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <div class="content">
+        <div class="container">
+            <div class="wrapper">
+                <h1> Searched for: {{ query }}</h1>
+                <!-- {{ book }} -->
+                <form action="/library/">
+                    <input type="submit" value="Return" class="btn">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="grid_container">
+        <div class="grid_items">
+            {% for books in book.all %}
+            <div class="single_grid_item">
+                <ul class="book_listing_ul">
+                    <a id="book_listing" href="/library/books/{{ books.id }}">
+                    <img src="{{ books.cover.url }}" />
+                    <li><h4 class="book_heading4"> {{ books.title }}</h4></li>
+                    <br>
+                    <li><span class="text_title">Authors: </span><br>{% for author in books.authors.all %}
+                        {{ author }}<br>
+                        {% endfor %}</li>
+                    <li><span class="text_title">Publisher: </span>{{ books.publisher }}</li>
+                    <li><span class="text_title">Publication date: </span>{{ books.publication_date }}</li>
+                    <li><span class="text_title">Language: </span>{{ books.language }}</li>
+                    <li><span class="text_title">Description: </span>{{ books.description|wordwrap:40|linebreaks|truncatewords:10 }}</li>
+                    </a>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}{% include "footer.html" %}{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block style %}{% static 'css/signing.css' %}{% endblock %}
+
+{% block content %}
+<section>
+    <div class="login_div">
+        <h2>Welcome to library!</h2>
+        <form method="POST">
+            <div class="login_form">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </div>
+            <button type="submit">Log in</button>
+            <a id="signup_a" href="{% url 'signup' %}">Sign up!</a>     
+        </form>
+        <div class="login_errors">
+            {% if form.non_field_errors %}
+            <ul class="error">
+                {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

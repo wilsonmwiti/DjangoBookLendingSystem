@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block style %}{% static 'css/main.css' %}{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+{% endblock %}
+
+{% block title %}Profile{% endblock %}
+
+{% block header %}{% include "navbar.html" %}{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+<div class="content container-extra-space">
+    <div class="container">
+        <div class="wrapper">
+        <h1 class="title">User Details</h1>
+            <form method="POST" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Save" class="btn">
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <h1 class="title">Loans</h1>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% for loan in loan_list %}
+                    <input type="checkbox" name="loan" id="loan{{forloop.counter}}" value="{{ loan.pk }}">
+                    <label for="loan{{ forloop.counter }}">{{ loan.borrowed_book.title }}</label>
+                    <br>
+                {% endfor %}
+                <input type="submit" value="Return book(s)" class="btn rtn_books_btn">
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block footer %}{% include "footer.html" %}{% endblock %}

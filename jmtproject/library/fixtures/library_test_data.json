@@ -1,0 +1,222 @@
+[
+{
+    "model": "library.author",
+    "pk": 8,
+    "fields": {
+        "first_name": "J.K.",
+        "last_name": "Rowling"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 9,
+    "fields": {
+        "first_name": "Robert",
+        "last_name": "Martin"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 10,
+    "fields": {
+        "first_name": "J. R. R.",
+        "last_name": "Tolkien"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 11,
+    "fields": {
+        "first_name": "Gaby",
+        "last_name": "Goldsack"
+    }
+},
+{
+    "model": "library.author",
+    "pk": 12,
+    "fields": {
+        "first_name": "Steve",
+        "last_name": "Smallman"
+    }
+},
+{
+    "model": "library.publisher",
+    "pk": 5,
+    "fields": {
+        "name": "Scholastic US"
+    }
+},
+{
+    "model": "library.publisher",
+    "pk": 6,
+    "fields": {
+        "name": "George Allen & Unwin"
+    }
+},
+{
+    "model": "library.publisher",
+    "pk": 7,
+    "fields": {
+        "name": "Pearson"
+    }
+},
+{
+    "model": "library.publisher",
+    "pk": 8,
+    "fields": {
+        "name": "Tukan förlag"
+    }
+},
+{
+    "model": "library.language",
+    "pk": 2,
+    "fields": {
+        "language": "Swedish"
+    }
+},
+{
+    "model": "library.language",
+    "pk": 3,
+    "fields": {
+        "language": "Finnish"
+    }
+},
+{
+    "model": "library.language",
+    "pk": 4,
+    "fields": {
+        "language": "English"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 1,
+    "fields": {
+        "category": "Drama"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 2,
+    "fields": {
+        "category": "Horror"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 3,
+    "fields": {
+        "category": "Children/Young Adult"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 4,
+    "fields": {
+        "category": "Scifi"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 5,
+    "fields": {
+        "category": "Fantasy"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 6,
+    "fields": {
+        "category": "High fantasy"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 7,
+    "fields": {
+        "category": "Juvenile fantasy"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 8,
+    "fields": {
+        "category": "Educational"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 9,
+    "fields": {
+        "category": "Software design"
+    }
+},
+{
+    "model": "library.category",
+    "pk": 10,
+    "fields": {
+        "category": "Software development"
+    }
+},
+{
+    "model": "library.book",
+    "pk": 14,
+    "fields": {
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "publisher": 5,
+        "publication_date": "1998-03-01",
+        "description": "What did Harry Potter know about magic? He was stuck living with the decidedly un-magical Dursleys, who hated him. He slept in a closet and ate their leftovers. But an owl messenger changes all that,",
+        "cover": "harry-potter-and-the-sorcerers-stone.jpg",
+        "language": 4,
+        "on_loan": false,
+        "authors": [
+            8
+        ],
+        "category": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "library.book",
+    "pk": 15,
+    "fields": {
+        "title": "The Hobbit",
+        "publisher": 6,
+        "publication_date": "1937-09-21",
+        "description": "This is the story of how a Baggins had an adventure, and found himself doing and saying things altogether unexpected... 'A flawless masterpiece'The Times Bilbo Baggins is a hobbit who enjoys a comfortable, unambitious life, rarely travelling further than the pantry of his hobbit-hole in Bag End. But his contentment is disturbed when the wizard, Gandalf, and a company of thirteen dwarves arrive on",
+        "cover": "thehobbit.jpg",
+        "language": 4,
+        "on_loan": false,
+        "authors": [
+            10
+        ],
+        "category": [
+            6,
+            7
+        ]
+    }
+},
+{
+    "model": "library.book",
+    "pk": 16,
+    "fields": {
+        "title": "Clean Code",
+        "publisher": 7,
+        "publication_date": "2008-08-01",
+        "description": "Even bad code can function. But if code isn't clean, it can bring a development organization to its knees. Every year, countless hours and significant resources are lost because of poorly written code. But it doesn't have to be that way.  Noted software expert Robert C. Martin presents a revolutionary paradigm with Clean Code: A Handbook of Agile Software Craftsmanship.",
+        "cover": "clean-code_PmuyjCR.jpg",
+        "language": 4,
+        "on_loan": false,
+        "authors": [
+            9
+        ],
+        "category": [
+            8,
+            9,
+            10
+        ]
+    }
+}
+]

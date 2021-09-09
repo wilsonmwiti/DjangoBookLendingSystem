@@ -1,0 +1,101 @@
+.sliderImg {
+    vertical-align: middle;
+    width: 18em;
+    height: 18em;
+    border-top-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+}
+/* Note that both article classes are also related to another things than only to imageslider */
+.article {
+    width: 48%;
+    float: left;
+}
+.news_article {
+    height: 25em;
+    background-color: white;
+    box-shadow: 0 0.9375em 1.5625em rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    margin-right: 2%;
+}
+.book_slider {
+    margin: 2em 2em 2em 10em;
+    box-sizing: border-box;
+    position: relative;
+    width: 18em;
+}
+.slider_link {
+    color: white;
+	text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px #000; 
+    text-decoration: none;
+}
+.mySlides {
+    display: none;
+    -webkit-box-shadow: 0px 3px 6px 3px rgba(0,0,0,0.69);
+    -moz-box-shadow: 0px 3px 6px 3px rgba(0,0,0,0.69);
+    box-shadow: 0px 3px 6px 3px rgba(0,0,0,0.69);
+    border-radius: 8px;
+}
+.cursor {
+    cursor: pointer;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: auto;
+    padding: 1em;
+    margin-top: 6em; /* Button positions */
+    color: white;
+    font-weight: bold;
+    font-size: 1.25em;
+    border-radius: 0 0.1875em 0.1875em 0;
+    user-select: none;
+}
+/* Right button position */
+.next {
+    right: 0;
+    border-radius: 0.1875em 0 0 0.1875em;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.caption-container {
+    text-align: center;
+    background: linear-gradient(45deg, #2C3E50, #0e0d0d);
+    padding: 0.15em 1em;
+    color: white;
+	text-shadow: 1px 1px 1px #000, 
+               3px 3px 5px #000; 
+    height: auto;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+@media screen and (max-width: 970px) {
+    .article {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .news_heading, .library_p {
+        margin-left: 12.5%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .news_heading, .library_p {
+        margin-left: 16.5%;
+    }
+}
+@media screen and (max-width: 650px) {
+    .book_slider {
+        max-width: 18em;
+        margin: 2em auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    .newbooks_heading {
+        margin-left: -5em;
+    }
+    .news_heading, .library_p {
+        margin-left: 0.3em;
+    }
+}

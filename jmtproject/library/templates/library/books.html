@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block style %}{% static 'css/main.css' %}{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/imageslider.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"> 
+{% endblock %}
+
+{% block header %}{% include "navbar.html" %}{% endblock %}
+        
+{% block content %}
+    <div class="page-container">
+        <div class="section">
+            <div class="section_content">
+                <!-- Slideshow -->
+                <div class="article">
+                    <h2 class="library_h2 newbooks_heading">New books!</h2>
+                    <div class="book_slider">
+                        {% for newbooks in newbook.all %}                      
+                        <div class="mySlides">
+                            <a id="slider_link" href="books/{{ newbooks.id }}">
+                                <img class="sliderImg" src="{{ newbooks.cover.url }}" alt="{{ books.title }}">
+                            </a>
+                            <div class="caption-container">
+                                <p id="caption"><a class="slider_link" href="books/{{ newbooks.id }}">{{ newbooks.title }}</a></p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <!-- Slideshow's Right And Left Arrow -->
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                    </div>
+                </div>
+                <!-- End Slideshow -->
+                <div class="article news_article">
+                    <h2 class="library_h2 news_heading">Accouncements & news</h2>
+                    <p class="library_p"><b>21.10.2020</b> <i>Our library service is now opened its doors. Warm greetings to everyone!</i></p>
+                </div>
+            </div>
+        </div>
+            <!-- Filter -->
+            <div class="filter_div">
+                <h3 class="filter_title">Filter books</h3>
+                <form class="filter_form" method="get">
+                    <div class="filter_form_item">
+                        {{myFilter.form.authors}}
+                    </div>
+                    <div class="filter_form_item">
+                        {{myFilter.form.category}}
+                    </div>
+                    <div class="filter_form_item">
+                        {{myFilter.form.language}}
+                    </div>
+                    <div class="filter_form_item">
+                        {{myFilter.form.publisher}}
+                    </div>
+                    <button class="filter_btn">Filter</button>
+                    <a id="reset_a" href="/library/">Reset</a>
+                </form>   
+            </div>
+            <div class="grid_container">
+                <div class="grid_items">
+                    {% for books in book.all %}
+                    <div class="single_grid_item">
+                        <ul class="book_listing_ul">
+                            <a id="book_listing" href="books/{{ books.id }}">
+                            <img src="{{ books.cover.url }}" />
+                            <li><h4 class="book_heading4"> {{ books.title }}</h4></li>
+                            <br>
+                            <li><span class="text_title">Authors:</span><br>{% for author in books.authors.all %}
+                                {{ author }}<br>
+                                {% endfor %}</li>
+                            <li><span class="text_title">Publisher: </span>{{ books.publisher }}</li>
+                            <li><span class="text_title">Publication date: </span>{{ books.publication_date }}</li>
+                            <li><span class="text_title">Language: </span>{{ books.language }}</li>
+                            <li><span class="text_title">Availability: </span>{% if books.on_loan %}
+                                On loan {% else %}Available{% endif %}</li>
+                            <li><span class="text_title">Description: </span> {{ books.description|wordwrap:40|linebreaks|truncatewords:10 }}</li>
+                            </a>
+                        </ul>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+{% endblock %}
+
+{% block footer %}{% include "footer.html" %}{% endblock %}
+
+{% block script_after_main %}{% static 'js/imageslider.js' %}{% endblock %}

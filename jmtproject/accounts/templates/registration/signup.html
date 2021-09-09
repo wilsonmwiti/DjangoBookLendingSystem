@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}SignUp{% endblock %}
+
+{% block style %}{% static 'css/signing.css' %}{% endblock %}
+
+{% block content %}
+<section>
+    <div class="login_div">
+        <h2>Register a new user</h2>
+        <form method="POST">
+            <div class="login_form">
+                {% csrf_token %}
+                {{ form.as_ul }}
+            </div>
+            <button type="submit">Sign Up</button>
+            <a id="cancel_signup" href="{% url 'login' %}">Cancel</a>
+        </form>
+    </div>
+</section>
+{% endblock %}
